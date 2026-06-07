@@ -1,5 +1,39 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <!-- Moroccan Explorer palette -->
+    <color name="terracotta_red">#C0392B</color>
+    <color name="saffron_gold">#E8A020</color>
+    <color name="deep_zellige_teal">#1A5C5A</color>
+    <color name="moroccan_clay">#D4845A</color>
+    <color name="ivory_plaster">#FAF0E0</color>
+    <color name="night_marrakech">#1C1208</color>
+    <color name="argan_amber">#C97D2E</color>
+    <color name="mint_sousse">#3AAFA9</color>
+    <color name="cobalt_blue_zellige">#1B4F72</color>
+    <color name="rose_jardin">#C9526B</color>
+    <color name="olive_medina">#7D8B3A</color>
+
+    <color name="deep_navy">#1A5C5A</color>
+    <color name="rich_copper">#C0392B</color>
+    <color name="muted_gold">#E8A020</color>
+    <color name="burned_orange">#C97D2E</color>
+    <color name="turquoise">#3AAFA9</color>
+
+    <color name="surface_navy">#123736</color>
+    <color name="text_white">#FAF0E0</color>
+    <color name="text_grey">#C8BFAF</color>
+
+    <color name="copper_gradient_start">#1C1208</color>
+    <color name="copper_gradient_end">#C0392B</color>
+
+    <color name="translucent_copper">#33C0392B</color>
+    <color name="amber_glow">#40E8A020</color>
+
+    <!-- Legacy aliases kept for existing files -->
+    <color name="moroccan_terracotta">#C0392B</color>
+    <color name="moroccan_turquoise">#1A5C5A</color>
+    <color name="moroccan_sand">#FAF0E0</color>
+    <color name="moroccan_mint">#3AAFA9</color>
+    <color name="moroccan_white">#FAF0E0</color>
+    <color name="moroccan_deep_blue">#1B4F72</color>
+    <color name="shimmer_placeholder">#E6D8C9</color>
 </resources>

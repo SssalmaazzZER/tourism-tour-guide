@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <activity android:id="@+id/splashActivity" android:name="com.example.tourismguide.presentation.splash.SplashActivity" android:label="@string/app_name" />
+    <activity android:id="@+id/onboardingActivity" android:name="com.example.tourismguide.presentation.onboarding.OnboardingActivity" android:label="@string/app_name" />
+    <activity android:id="@+id/loginActivity" android:name="com.example.tourismguide.presentation.auth.LoginActivity" android:label="@string/login" />
+    <activity android:id="@+id/registerActivity" android:name="com.example.tourismguide.presentation.auth.RegisterActivity" android:label="@string/register" />
+    <fragment android:id="@+id/homeFragment" android:name="com.example.tourismguide.presentation.home.HomeFragment" android:label="@string/home" />
+    <fragment android:id="@+id/mapFragment" android:name="com.example.tourismguide.presentation.map.MapFragment" android:label="@string/map" />
+    <fragment android:id="@+id/guideListFragment" android:name="com.example.tourismguide.presentation.guide.GuideListFragment" android:label="@string/guides" />
+    <activity
+        android:id="@+id/guideDetailActivity"
+        android:name="com.example.tourismguide.presentation.guide.GuideDetailActivity"
+        android:label="@string/guide_detail">
+        <argument android:name="guideId" app:argType="string" />
+    </activity>
+    <activity
+        android:id="@+id/placeDetailActivity"
+        android:name="com.example.tourismguide.presentation.place.PlaceDetailActivity"
+        android:label="@string/place_detail">
+        <argument android:name="placeId" app:argType="string" />
+    </activity>
+    <activity android:id="@+id/bookingActivity" android:name="com.example.tourismguide.presentation.booking.BookingActivity" android:label="@string/booking" />
+    <fragment android:id="@+id/liveTrackingFragment" android:name="com.example.tourismguide.presentation.live.LiveTrackingFragment" android:label="@string/live_tracking" />
+    <activity android:id="@+id/chatActivity" android:name="com.example.tourismguide.presentation.chat.ChatActivity" android:label="@string/chat" />
+    <fragment android:id="@+id/itineraryFragment" android:name="com.example.tourismguide.presentation.main.PlaceholderFragment" android:label="@string/itineraries" />
+    <fragment android:id="@+id/itineraryDetailFragment" android:name="com.example.tourismguide.presentation.main.PlaceholderFragment" android:label="@string/itinerary_detail" />
+    <fragment android:id="@+id/profileFragment" android:name="com.example.tourismguide.presentation.profile.ProfileFragment" android:label="@string/profile" />
+    <fragment android:id="@+id/settingsFragment" android:name="com.example.tourismguide.presentation.main.PlaceholderFragment" android:label="@string/settings" />
+</navigation>

@@ -1,3 +1,146 @@
 <resources>
-    <string name="app_name">tourismappsal</string>
+    <string name="app_name">TourismGuide Morocco</string>
+    <string name="default_web_client_id">380120567503-6dm8upjkeh1egvgk3sl493fto7h3rrhr.apps.googleusercontent.com</string>
+    <string name="login_title">Welcome back</string>
+    <string name="register_title">Create account</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="confirm_password">Confirm password</string>
+    <string name="full_name">Full name</string>
+    <string name="login">Log in</string>
+    <string name="register">Register</string>
+    <string name="continue_google">Continue with Google</string>
+    <string name="no_account_register">No account? Register</string>
+    <string name="have_account_login">Already have an account? Log in</string>
+    <string name="error_generic">Something went wrong. Please try again.</string>
+    <string name="error_passwords_do_not_match">Passwords do not match.</string>
+    <string name="onboarding_title_1">Discover Morocco</string>
+    <string name="onboarding_title_2">Find local guides</string>
+    <string name="onboarding_title_3">Travel your way</string>
+    <string name="onboarding_body_1">Explore cities, beaches, food, culture, and activities across Morocco.</string>
+    <string name="onboarding_body_2">Connect with verified guides who match your language and budget.</string>
+    <string name="onboarding_body_3">Choose your language and start planning a richer trip.</string>
+    <string name="language_ar">AR</string>
+    <string name="language_fr">FR</string>
+    <string name="language_en">EN</string>
+    <string name="get_started">Get Started</string>
+    <string name="search_hint">Search places, food, guides</string>
+    <string name="category_all">All</string>
+    <string name="category_culture">Arts &amp; Culture</string>
+    <string name="category_food">Food &amp; Gastronomy</string>
+    <string name="category_city">Cities</string>
+    <string name="category_beach">Beaches</string>
+    <string name="category_activity">Activities</string>
+    <string name="section_trending">Trending Now</string>
+    <string name="section_nearby">Nearby You</string>
+    <string name="section_recent">Recently Viewed</string>
+    <string name="distance_km" formatted="false">%.1f km</string>
+    <string name="place_image">Place image</string>
+    <string name="coming_soon">Coming soon</string>
+    <string name="home">Home</string>
+    <string name="map">Map</string>
+    <string name="guides">Guides</string>
+    <string name="itineraries">Itineraries</string>
+    <string name="profile">Profile</string>
+    <string name="guide_detail">Guide detail</string>
+    <string name="place_detail">Place detail</string>
+    <string name="booking">Booking</string>
+    <string name="live_tracking">Live tracking</string>
+    <string name="chat">Chat</string>
+    <string name="itinerary_detail">Itinerary detail</string>
+    <string name="settings">Settings</string>
+    <string name="google_maps_key">AIzaSyAvt7u_pGD_7h573l6950fGM9KJsQHRhr0</string>
+    <string name="places">Places</string>
+    <string name="open">Open</string>
+    <string name="weather">Weather</string>
+    <string name="weather_stub">Sunny, 24 C</string>
+    <string name="things_to_do">Things to do</string>
+    <string name="photos">Photos</string>
+    <string name="reviews">Reviews</string>
+    <string name="photo">Photo</string>
+    <string name="take_photo">Take Photo</string>
+    <string name="save_to_itinerary">Save to Itinerary</string>
+    <string name="share">Share</string>
+    <string name="share_place_text" formatted="false">%1$s: %2$.5f, %3$.5f</string>
+    <string name="rating_review_count" formatted="false">%1$.1f (%2$d reviews)</string>
+    <string name="distance_away" formatted="false">%1$.1f km away</string>
+    <string name="camera_permission_denied">Camera permission is required to take photos.</string>
+    <string name="location_permission_denied">Location permission is required to show your position.</string>
+    <string name="phase_3_coming">Coming in Phase 3</string>
+    <string name="itinerary_name">Itinerary name</string>
+    <string name="create_new_itinerary">Create new itinerary</string>
+    <string name="create">Create</string>
+    <string name="new_itinerary">New itinerary</string>
+    <string name="channel_landmarks">Nearby Landmarks</string>
+    <string name="channel_bookings">Bookings &amp; Requests</string>
+    <string name="near_landmark_title">You are near %1$s!</string>
+    <string name="near_landmark_body">Tap to explore.</string>
+    <string name="location_service_title">Location tracking active</string>
+    <string name="location_service_body">TourismGuide is updating nearby landmarks.</string>
+    <string name="price_per_hour" formatted="false">%.0f MAD/hr</string>
+    <string name="rating_per_hour" formatted="false">%.1f rating, %.0f MAD/hr</string>
+    <string name="price_estimate_mad" formatted="false">Estimated price: %.0f MAD</string>
+    <string name="address_not_available">Address not available</string>
+    <string name="pick_date">Pick date</string>
+    <string name="pick_time">Pick time</string>
+    <string name="send_request">Send Request</string>
+    <string name="special_requests">Special requests</string>
+    <string name="date_selected">Date selected</string>
+    <string name="time_selected">Time selected</string>
+    <plurals name="hours">
+        <item quantity="one">%d hour</item>
+        <item quantity="other">%d hours</item>
+    </plurals>
+    <string name="share_guide_text" formatted="false">%1$s, %.1f rating, %.0f MAD/hr</string>
+    <string name="hire_now">Hire Now</string>
+    <string name="apply">Apply</string>
+    <string name="reset">Reset</string>
+    <string name="tour_sharing_location">Tour in progress - sharing location</string>
+    <string name="live_tracking_title">Live Tracking</string>
+    <string name="you">You</string>
+    <string name="chat_hint">Message</string>
+    <string name="send">Send</string>
+    <string name="call">Call</string>
+    <string name="whatsapp">WhatsApp</string>
+    <string name="confirm">Confirm</string>
+    <string name="cancel">Cancel</string>
+    <string name="my_bookings">My Bookings</string>
+    <string name="my_photos">My Photos</string>
+    <string name="my_reviews">My Reviews</string>
+    <string name="guide_dashboard">Guide Dashboard</string>
+    <string name="accept">Accept</string>
+    <string name="decline">Decline</string>
+    <string name="total_tours">Total tours</string>
+    <string name="average_rating">Average rating</string>
+    <string name="total_earnings">Total earnings</string>
+    <string name="incoming_requests">Incoming Requests</string>
+    <string name="ongoing_tours">Ongoing Tours</string>
+    <string name="view_all">View all</string>
+
+    <!-- Phase 4 strings -->
+    <string name="appearance">Appearance</string>
+    <string name="dark_mode">Dark Mode</string>
+    <string name="notifications">Notifications</string>
+    <string name="nearby_landmarks">Nearby Landmarks</string>
+    <string name="booking_updates">Booking Updates</string>
+    <string name="data">Data</string>
+    <string name="clear_cached_places">Clear Cached Places</string>
+    <string name="about">About</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="rate_app">Rate App</string>
+    <string name="account">Account</string>
+    <string name="logout">Logout</string>
+    <string name="version_format" formatted="false">Version: %s</string>
+    <string name="cache_cleared">Cache cleared successfully</string>
+    <string name="cache_cleared_count" formatted="false">%1$d cached places removed</string>
+    <string name="language_changed">Language changed</string>
+    <string name="widget_description">Featured Tourism Destination</string>
+    <string name="map_unavailable">Map not available</string>
+    <string name="no_places_found">No places found</string>
+    <string name="plan_first_trip">Plan your first trip</string>
+    <string name="add_place">Add Place</string>
+    <string name="place_added_to_itinerary" formatted="false">%s added to itinerary</string>
+    <string name="itinerary_meta" formatted="false">%d places</string>
+    <string name="itinerary_deleted">Itinerary deleted</string>
+    <string name="undo">Undo</string>
 </resources>

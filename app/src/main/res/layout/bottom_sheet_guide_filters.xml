@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <com.google.android.material.chip.ChipGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:singleSelection="false">
+        <com.google.android.material.chip.Chip android:id="@+id/chipArabic" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="AR" />
+        <com.google.android.material.chip.Chip android:id="@+id/chipFrench" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="FR" />
+        <com.google.android.material.chip.Chip android:id="@+id/chipEnglish" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="EN" />
+    </com.google.android.material.chip.ChipGroup>
+
+    <com.google.android.material.slider.Slider
+        android:id="@+id/sliderRating"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:valueFrom="1"
+        android:valueTo="5"
+        android:stepSize="0.5" />
+
+    <com.google.android.material.slider.Slider
+        android:id="@+id/sliderPrice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:valueFrom="0"
+        android:valueTo="500"
+        android:stepSize="50" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <com.google.android.material.button.MaterialButton android:id="@+id/buttonReset" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="@string/reset" />
+        <com.google.android.material.button.MaterialButton android:id="@+id/buttonApply" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="@string/apply" />
+    </LinearLayout>
+</LinearLayout>

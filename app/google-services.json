@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "380120567503",
+    "project_id": "tourismguide-f67f2",
+    "storage_bucket": "tourismguide-f67f2.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:380120567503:android:43e04bc2294274156071ba",
+        "android_client_info": {
+          "package_name": "com.example.tourismguide"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "380120567503-9a2vrhc4n00crmdj55m9qcbp69ag125i.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.tourismguide",
+            "certificate_hash": "6626e42399ef1f89dbc369eacb104968c00f3691"
+          }
+        },
+        {
+          "client_id": "380120567503-6dm8upjkeh1egvgk3sl493fto7h3rrhr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBBxNm-r9x_mK3Qi6KYQ1k-ly4tO03SKMU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "380120567503-6dm8upjkeh1egvgk3sl493fto7h3rrhr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

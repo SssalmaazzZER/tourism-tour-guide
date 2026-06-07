@@ -1,9 +1,39 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.Tourismappsal" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    <style name="Theme.TourismGuide" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/terracotta_red</item>
+        <item name="colorOnPrimary">@color/ivory_plaster</item>
+        <item name="colorPrimaryContainer">@color/deep_zellige_teal</item>
+        <item name="colorOnPrimaryContainer">@color/ivory_plaster</item>
+        <item name="colorSecondary">@color/saffron_gold</item>
+        <item name="colorOnSecondary">@color/night_marrakech</item>
+        <item name="colorTertiary">@color/mint_sousse</item>
+        <item name="colorOnTertiary">@color/night_marrakech</item>
+        <item name="colorSurface">@color/ivory_plaster</item>
+        <item name="colorOnSurface">@color/night_marrakech</item>
+        <item name="colorSurfaceVariant">@color/moroccan_clay</item>
+        <item name="colorOnSurfaceVariant">@color/night_marrakech</item>
+        <item name="colorOutline">@color/argan_amber</item>
+
+        <item name="android:statusBarColor">@color/deep_zellige_teal</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:navigationBarColor">@color/night_marrakech</item>
+        <item name="android:windowBackground">@color/ivory_plaster</item>
     </style>
 
-    <style name="Theme.Tourismappsal" parent="Base.Theme.Tourismappsal" />
+    <style name="TextAppearance.Marhaba.Header" parent="TextAppearance.Material3.HeadlineLarge">
+        <item name="android:fontFamily">serif</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/deep_zellige_teal</item>
+    </style>
+
+    <style name="TextAppearance.Marhaba.Body" parent="TextAppearance.Material3.BodyMedium">
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textColor">@color/night_marrakech</item>
+    </style>
+
+    <style name="Widget.Marhaba.Button.Turquoise" parent="Widget.Material3.Button">
+        <item name="backgroundTint">@color/turquoise</item>
+        <item name="android:textColor">@color/night_marrakech</item>
+    </style>
 </resources>

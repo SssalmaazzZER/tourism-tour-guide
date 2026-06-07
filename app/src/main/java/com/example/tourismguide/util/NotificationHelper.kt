@@ -1,0 +1,55 @@
+package com.example.tourismguide.util
+
+import android.app.NotificationChannel
+import android.app.NotificationManager
+import android.app.PendingIntent
+import android.content.Context
+import android.content.Intent
+import android.os.Build
+import androidx.core.app.NotificationCompat
+import androidx.core.app.NotificationManagerCompat
+import com.example.tourismguide.R
+import com.example.tourismguide.presentation.place.PlaceDetailActivity
+
+class NotificationHelper(private val context: Context) {
+    fun createChannels() {
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O) return
+        val manager = context.getSystemService(NotificationManager::class.java)
+        manager.createNotificationChannel(NotificationChannel(CHANNEL_LANDMARKS, context.getString(R.string.channel_landmarks), NotificationManager.IMPORTANCE_DEFAULT))
+        manager.createNotificationChannel(NotificationChannel(CHANNEL_BOOKINGS, context.getString(R.string.channel_bookings), NotificationManager.IMPORTANCE_DEFAULT))
+    }
+
+    fun showLandmarkNotification(placeName: String) {
+        showLandmarkNotification(placeName, placeName)
+    }
+
+    fun showLandmarkNotification(placeId: String, placeName: String) {
+        createChannels()
+        val intent = Intent(context, PlaceDetailActivity::class.java).putExtra("placeId", placeId)
+        val pendingIntent = PendingIntent.getActivity(context, placeName.hashCode(), intent, PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE)
+        show(CHANNEL_LANDMARKS, placeName.hashCode(), context.getString(R.string.near_landmark_title, placeName), context.getString(R.string.near_landmark_body), pendingIntent)
+    }
+
+    fun showBookingNotification(title: String, body: String) {
+        createChannels()
+        show(CHANNEL_BOOKINGS, title.hashCode(), title, body, null)
+    }
+
+    private fun show(channel: String, id: Int, title: String, body: String, pendingIntent: PendingIntent?) {
+        val notification = NotificationCompat.Builder(context, channel)
+            .setSmallIcon(R.drawable.ic_place_marker)
+            .setContentTitle(title)
+            .setContentText(body)
+            .setAutoCancel(true)
+            .setContentIntent(pendingIntent)
+            .build()
+        if (PermissionHelper.checkPermission(context, android.Manifest.permission.POST_NOTIFICATIONS) || Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU) {
+            NotificationManagerCompat.from(context).notify(id, notification)
+        }
+    }
+
+    companion object {
+        const val CHANNEL_LANDMARKS = "nearby_landmarks"
+        const val CHANNEL_BOOKINGS = "bookings_requests"
+    }
+}

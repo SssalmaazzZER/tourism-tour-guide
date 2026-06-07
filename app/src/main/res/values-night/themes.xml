@@ -1,7 +1,13 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Base.Theme.Tourismappsal" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your dark theme here. -->
-        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+<resources>
+    <style name="Theme.TourismGuide" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/terracotta_red</item>
+        <item name="colorOnPrimary">@color/ivory_plaster</item>
+        <item name="colorSecondary">@color/saffron_gold</item>
+        <item name="colorOnSecondary">@color/night_marrakech</item>
+        <item name="colorSurface">@color/deep_zellige_teal</item>
+        <item name="colorOnSurface">@color/ivory_plaster</item>
+        <item name="android:windowBackground">@color/night_marrakech</item>
+        <item name="android:navigationBarColor">@color/night_marrakech</item>
+        <item name="android:windowLightStatusBar">false</item>
     </style>
 </resources>
