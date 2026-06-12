@@ -4,11 +4,10 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginBottom="16dp"
-    app:cardBackgroundColor="@color/translucent_copper"
+    app:cardBackgroundColor="?attr/colorSurface"
     app:cardCornerRadius="16dp"
-    app:cardElevation="0dp"
-    app:strokeWidth="1dp"
-    app:strokeColor="@color/muted_gold">
+    app:cardElevation="2dp"
+    app:strokeWidth="0dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -21,7 +20,7 @@
             android:layout_height="wrap_content"
             android:text="Jour 1"
             android:textAppearance="@style/TextAppearance.Marhaba.Header"
-            android:textColor="@color/deep_navy"
+            android:textColor="?attr/colorPrimary"
             android:textSize="14sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -33,7 +32,7 @@
             android:layout_marginTop="4dp"
             android:text="Médina de Fès"
             android:textAppearance="@style/TextAppearance.Marhaba.Header"
-            android:textColor="@color/text_white"
+            android:textColor="?attr/colorOnSurface"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -46,7 +45,7 @@
             android:layout_marginTop="8dp"
             android:text="Visite guidée des tanneries et du souk traditionnel. Dégustation de thé à la menthe."
             android:textAppearance="@style/TextAppearance.Marhaba.Body"
-            android:textColor="@color/text_white"
+            android:textColor="?attr/colorOnSurfaceVariant"
             android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -57,33 +56,19 @@
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:layout_marginTop="16dp"
-            android:background="@color/muted_gold"
-            android:alpha="0.3"
+            android:background="?attr/colorOutlineVariant"
             app:layout_constraintTop_toBottomOf="@id/textDescription" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonCustomize"
+            style="@style/Widget.Material3.Button.OutlinedButton"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
-            android:orientation="horizontal"
-            app:layout_constraintTop_toBottomOf="@id/divider">
-
-            <ImageView
-                android:layout_width="16dp"
-                android:layout_height="16dp"
-                android:src="@drawable/ic_people"
-                app:tint="@color/deep_navy" />
-
-            <TextView
-                android:id="@+id/textGuide"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:text="Guide: Hassan M."
-                android:textColor="@color/deep_navy"
-                android:textSize="12sp"
-                android:textStyle="bold" />
-        </LinearLayout>
+            android:text="@string/edit_days"
+            app:icon="@drawable/ic_route"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/divider" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </com.google.android.material.card.MaterialCardView>

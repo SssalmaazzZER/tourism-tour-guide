@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_dark"
+    android:fillViewport="true"
+    tools:context=".fragments.HomeFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/spacing_lg">
+
+        <!-- Hero Section -->
+        <include layout="@layout/section_hero" />
+
+        <!-- Categories Section -->
+        <include layout="@layout/section_categories" />
+
+        <!-- Featured Destinations -->
+        <include layout="@layout/section_destinations" />
+
+        <!-- Football Section - Atlas Lions -->
+        <include layout="@layout/section_football" />
+
+        <!-- Weather Widget -->
+        <include layout="@layout/section_weather" />
+
+        <!-- Moroccan Cuisine Section -->
+        <include layout="@layout/section_cuisine" />
+
+        <!-- Testimonials -->
+        <include layout="@layout/section_testimonials" />
+
+        <!-- Quick Actions -->
+        <include layout="@layout/section_quick_actions" />
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

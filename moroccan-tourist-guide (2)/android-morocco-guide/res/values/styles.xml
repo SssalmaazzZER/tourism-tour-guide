@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Base Application Theme -->
+    <style name="AppTheme" parent="Theme.Material3.Dark.NoActionBar">
+        <item name="colorPrimary">@color/terracotta</item>
+        <item name="colorPrimaryDark">@color/terracotta_dark</item>
+        <item name="colorAccent">@color/saffron_gold</item>
+        <item name="android:windowBackground">@color/background_dark</item>
+        <item name="android:statusBarColor">@color/status_bar</item>
+        <item name="android:navigationBarColor">@color/background_card</item>
+        <item name="android:fontFamily">@font/poppins</item>
+    </style>
+    
+    <!-- Text Styles -->
+    <style name="TextAppearance.Maghrib.Headline1">
+        <item name="android:textSize">32sp</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:fontFamily">@font/playfair_display_bold</item>
+        <item name="android:letterSpacing">-0.02</item>
+    </style>
+    
+    <style name="TextAppearance.Maghrib.Headline2">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:fontFamily">@font/poppins_semibold</item>
+    </style>
+    
+    <style name="TextAppearance.Maghrib.Headline3">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:fontFamily">@font/poppins_medium</item>
+    </style>
+    
+    <style name="TextAppearance.Maghrib.Body">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/text_secondary</item>
+        <item name="android:fontFamily">@font/poppins</item>
+        <item name="android:lineSpacingMultiplier">1.5</item>
+    </style>
+    
+    <style name="TextAppearance.Maghrib.Caption">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/text_muted</item>
+        <item name="android:fontFamily">@font/poppins</item>
+    </style>
+    
+    <style name="TextAppearance.Maghrib.Label">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/text_secondary</item>
+        <item name="android:fontFamily">@font/poppins_medium</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:letterSpacing">0.05</item>
+    </style>
+    
+    <!-- Button Styles -->
+    <style name="Widget.Maghrib.Button.Primary">
+        <item name="android:background">@drawable/bg_button_primary</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:fontFamily">@font/poppins_semibold</item>
+        <item name="android:paddingHorizontal">24dp</item>
+        <item name="android:paddingVertical">14dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:elevation">4dp</item>
+    </style>
+    
+    <style name="Widget.Maghrib.Button.Secondary">
+        <item name="android:background">@drawable/bg_button_secondary</item>
+        <item name="android:textColor">@color/terracotta</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">@font/poppins_medium</item>
+        <item name="android:paddingHorizontal">20dp</item>
+        <item name="android:paddingVertical">12dp</item>
+        <item name="android:gravity">center</item>
+    </style>
+    
+    <style name="Widget.Maghrib.Button.Icon">
+        <item name="android:background">@drawable/bg_button_icon</item>
+        <item name="android:padding">12dp</item>
+        <item name="tint">@color/text_primary</item>
+    </style>
+    
+    <!-- Card Styles -->
+    <style name="Widget.Maghrib.Card">
+        <item name="android:background">@drawable/bg_card</item>
+        <item name="android:elevation">8dp</item>
+        <item name="android:padding">16dp</item>
+    </style>
+    
+    <style name="Widget.Maghrib.Card.Destination">
+        <item name="android:background">@drawable/bg_card_destination</item>
+        <item name="android:elevation">12dp</item>
+    </style>
+    
+    <!-- Input Styles -->
+    <style name="Widget.Maghrib.SearchBar">
+        <item name="android:background">@drawable/bg_search_bar</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textColorHint">@color/text_muted</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:paddingHorizontal">20dp</item>
+        <item name="android:paddingVertical">16dp</item>
+        <item name="android:drawablePadding">12dp</item>
+    </style>
+    
+    <!-- Bottom Navigation Style -->
+    <style name="Widget.Maghrib.BottomNavigation">
+        <item name="android:background">@drawable/bg_bottom_nav</item>
+        <item name="itemIconTint">@color/bottom_nav_colors</item>
+        <item name="itemTextColor">@color/bottom_nav_colors</item>
+        <item name="labelVisibilityMode">labeled</item>
+        <item name="android:elevation">16dp</item>
+    </style>
+</resources>

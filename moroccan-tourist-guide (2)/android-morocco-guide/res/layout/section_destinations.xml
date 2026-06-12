@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginTop="@dimen/spacing_xl">
+
+    <!-- Section Header -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="@dimen/spacing_md"
+        android:layout_marginBottom="@dimen/spacing_md">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Featured Destinations"
+            style="@style/TextAppearance.Maghrib.Headline3" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/action_view_all"
+            android:textColor="@color/terracotta"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+    <!-- Horizontal Scroll Destinations -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/destinations_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/destination_card_height"
+        android:orientation="horizontal"
+        android:clipToPadding="false"
+        android:paddingHorizontal="@dimen/spacing_md"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+</LinearLayout>

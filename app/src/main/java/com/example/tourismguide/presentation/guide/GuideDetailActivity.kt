@@ -44,13 +44,20 @@ class GuideDetailActivity : LocalizedActivity() {
                     binding.collapsingToolbar.title = guide.name
                     ImageUtils.loadWithCoil(binding.imageAvatar, guide.avatarUrl)
                     binding.textName.text = guide.name
-                    binding.textBio.text = guide.specialities
-                    binding.textLanguages.text = guide.languages
-                    binding.textSpecialities.text = guide.specialities
+                    binding.textBio.text = guide.bio.ifBlank { guide.specialities }
+                    binding.textLanguages.text = getString(R.string.languages_format, guide.languages)
+                    binding.textSpecialities.text = getString(R.string.specialities_format, guide.specialities)
+                    binding.textAvailability.text = getString(R.string.availability_format, guide.availability)
+                    binding.textPrice.text = getString(R.string.price_per_hour, guide.pricePerHour)
                     binding.ratingBar.rating = guide.rating.toFloat()
                     binding.textReviewCount.text = getString(R.string.rating_review_count, guide.rating, state.reviews.size)
                     binding.buttonHire.setOnClickListener { GuideRequestBottomSheet.newInstance(guide.id).show(supportFragmentManager, GuideRequestBottomSheet.TAG) }
                     binding.buttonCall.setOnClickListener { startActivity(Intent(Intent.ACTION_DIAL, Uri.parse("tel:${guide.phone}"))) }
+                    binding.buttonEmail.setOnClickListener {
+                        if (guide.email.isNotBlank()) {
+                            startActivity(Intent(Intent.ACTION_SENDTO, Uri.parse("mailto:${guide.email}")))
+                        }
+                    }
                     binding.buttonWhatsapp.setOnClickListener { startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://wa.me/${guide.phone}"))) }
                     binding.buttonShare.setOnClickListener {
                         val text = getString(R.string.share_guide_text, guide.name, guide.rating, guide.pricePerHour)

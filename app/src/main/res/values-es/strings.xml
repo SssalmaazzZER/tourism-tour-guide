@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TourismGuide Marruecos</string>
+    <string name="discover">Descubrir</string>
+    <string name="discover_morocco">Descubre Marruecos</string>
+    <string name="discover_subtitle">Cultura, historia, gastronomía y aventuras</string>
+    <string name="browse_categories">Explorar categorías</string>
+    <string name="featured_highlights">Destacados</string>
+    <string name="search">Buscar</string>
+    <string name="search_hint">Buscar lugares, comida, guías</string>
+    <string name="recent_searches">Búsquedas recientes</string>
+    <string name="no_results">Sin resultados</string>
+    <string name="favorites">Favoritos</string>
+    <string name="add_to_favorites">Añadir a favoritos</string>
+    <string name="remove_from_favorites">Quitar de favoritos</string>
+    <string name="view_on_map">Ver en el mapa</string>
+    <string name="home">Inicio</string>
+    <string name="map">Mapa</string>
+    <string name="itineraries">Itinerarios</string>
+    <string name="profile">Perfil</string>
+    <string name="settings">Ajustes</string>
+    <string name="nav_cities">Ciudades</string>
+    <string name="nav_monuments">Monumentos</string>
+    <string name="nav_culture">Cultura</string>
+    <string name="nav_architecture">Arquitectura</string>
+    <string name="nav_music">Música</string>
+    <string name="nav_gastronomy">Gastronomía</string>
+    <string name="nav_festivals">Festivales</string>
+    <string name="nav_artisanat">Artesanía</string>
+    <string name="nav_nature">Naturaleza</string>
+    <string name="nav_activities">Actividades</string>
+    <string name="nav_museums">Museos</string>
+    <string name="nav_unesco">Patrimonio UNESCO</string>
+    <string name="nav_events">Eventos</string>
+    <string name="nav_circuits">Circuitos turísticos</string>
+    <string name="language_es">ES</string>
+</resources>

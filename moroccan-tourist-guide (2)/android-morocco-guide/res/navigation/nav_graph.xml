@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.maghribguide.fragments.HomeFragment"
+        android:label="Home">
+        <action
+            android:id="@+id/action_home_to_destination"
+            app:destination="@id/destinationDetailFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_home_to_football"
+            app:destination="@id/footballFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/exploreFragment"
+        android:name="com.maghribguide.fragments.ExploreFragment"
+        android:label="Explore" />
+
+    <fragment
+        android:id="@+id/planFragment"
+        android:name="com.maghribguide.fragments.PlanFragment"
+        android:label="Plan" />
+
+    <fragment
+        android:id="@+id/savedFragment"
+        android:name="com.maghribguide.fragments.SavedFragment"
+        android:label="Saved" />
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.maghribguide.fragments.ProfileFragment"
+        android:label="Profile" />
+
+    <fragment
+        android:id="@+id/destinationDetailFragment"
+        android:name="com.maghribguide.fragments.DestinationDetailFragment"
+        android:label="Destination">
+        <argument
+            android:name="destinationId"
+            app:argType="integer" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/footballFragment"
+        android:name="com.maghribguide.fragments.FootballFragment"
+        android:label="Atlas Lions" />
+
+</navigation>

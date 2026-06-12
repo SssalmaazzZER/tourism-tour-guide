@@ -1,0 +1,197 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-heading: var(--font-sans);
+  --font-sans: var(--font-geist-sans), 'Geist Fallback';
+  --font-mono: var(--font-geist-mono), 'Geist Mono Fallback';
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+  --color-terracotta: var(--terracotta);
+  --color-saffron: var(--saffron);
+  --color-emerald: var(--emerald);
+  --color-majorelle: var(--majorelle);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+:root {
+  /* Moroccan-inspired color palette - Dark luxurious theme */
+  --background: #1a1410;
+  --foreground: #faf5ef;
+  --card: #241c16;
+  --card-foreground: #faf5ef;
+  --popover: #1f1812;
+  --popover-foreground: #faf5ef;
+  --primary: #c47a4a;
+  --primary-foreground: #faf5ef;
+  --secondary: #d4a84b;
+  --secondary-foreground: #1a1410;
+  --muted: #2d241c;
+  --muted-foreground: #a39588;
+  --accent: #4a6fa5;
+  --accent-foreground: #faf5ef;
+  --destructive: #dc3545;
+  --border: #3d322a;
+  --input: #2d241c;
+  --ring: #c47a4a;
+  --chart-1: #c47a4a;
+  --chart-2: #d4a84b;
+  --chart-3: #4a6fa5;
+  --chart-4: #4a8f6e;
+  --chart-5: #8b5a8b;
+  --radius: 1rem;
+  
+  /* Moroccan accent colors */
+  --terracotta: #c47a4a;
+  --saffron: #d4a84b;
+  --emerald: #4a8f6e;
+  --majorelle: #4a6fa5;
+  
+  --sidebar: #1f1812;
+  --sidebar-foreground: #faf5ef;
+  --sidebar-primary: #c47a4a;
+  --sidebar-primary-foreground: #faf5ef;
+  --sidebar-accent: #2d241c;
+  --sidebar-accent-foreground: #faf5ef;
+  --sidebar-border: #3d322a;
+  --sidebar-ring: #c47a4a;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    @apply font-sans scroll-smooth bg-background;
+  }
+}
+
+/* Hide scrollbar for clean mobile look */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Moroccan Zellige Pattern Background */
+.zellige-pattern {
+  background-image: 
+    linear-gradient(30deg, var(--border) 12%, transparent 12.5%, transparent 87%, var(--border) 87.5%, var(--border)),
+    linear-gradient(150deg, var(--border) 12%, transparent 12.5%, transparent 87%, var(--border) 87.5%, var(--border)),
+    linear-gradient(30deg, var(--border) 12%, transparent 12.5%, transparent 87%, var(--border) 87.5%, var(--border)),
+    linear-gradient(150deg, var(--border) 12%, transparent 12.5%, transparent 87%, var(--border) 87.5%, var(--border)),
+    linear-gradient(60deg, rgba(61, 50, 42, 0.5) 25%, transparent 25.5%, transparent 75%, rgba(61, 50, 42, 0.5) 75%, rgba(61, 50, 42, 0.5)),
+    linear-gradient(60deg, rgba(61, 50, 42, 0.5) 25%, transparent 25.5%, transparent 75%, rgba(61, 50, 42, 0.5) 75%, rgba(61, 50, 42, 0.5));
+  background-size: 40px 70px;
+  background-position: 0 0, 0 0, 20px 35px, 20px 35px, 0 0, 20px 35px;
+}
+
+/* Animated gradient overlay */
+.moroccan-gradient {
+  background: linear-gradient(
+    135deg,
+    rgba(196, 122, 74, 0.15) 0%,
+    rgba(212, 168, 75, 0.1) 25%,
+    rgba(74, 111, 165, 0.15) 50%,
+    rgba(74, 143, 110, 0.1) 75%,
+    rgba(196, 122, 74, 0.15) 100%
+  );
+  background-size: 400% 400%;
+  animation: gradient-shift 15s ease infinite;
+}
+
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* Glow effects */
+.glow-terracotta {
+  box-shadow: 0 0 30px rgba(196, 122, 74, 0.4);
+}
+
+.glow-majorelle {
+  box-shadow: 0 0 30px rgba(74, 111, 165, 0.4);
+}
+
+.glow-saffron {
+  box-shadow: 0 0 30px rgba(212, 168, 75, 0.4);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1f1812;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c47a4a;
+  border-radius: 3px;
+}
+
+/* Mobile frame styling */
+.mobile-frame {
+  max-width: 430px;
+  margin: 0 auto;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+@media (min-width: 768px) {
+  .mobile-frame {
+    border-radius: 2.5rem;
+    min-height: 90vh;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 
+      0 0 0 12px #0d0a08,
+      0 0 0 14px #3d322a,
+      0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  }
+}

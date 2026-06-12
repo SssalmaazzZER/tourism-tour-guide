@@ -12,8 +12,16 @@ class GeofenceBroadcastReceiver : BroadcastReceiver() {
         val event = GeofencingEvent.fromIntent(intent) ?: return
         if (event.hasError() || event.geofenceTransition != Geofence.GEOFENCE_TRANSITION_ENTER) return
         val requestId = event.triggeringGeofences?.firstOrNull()?.requestId.orEmpty()
-        val placeId = requestId.substringBefore("|", requestId)
-        val placeName = requestId.substringAfter("|", requestId)
-        NotificationHelper(context).showLandmarkNotification(placeId, placeName)
+        val helper = NotificationHelper(context)
+        if (requestId.startsWith("unesco|")) {
+            val parts = requestId.split("|")
+            val siteId = parts.getOrElse(1) { "" }
+            val siteName = parts.getOrElse(2) { "UNESCO site" }
+            helper.showUnescoNotification(siteId, siteName)
+        } else {
+            val placeId = requestId.substringBefore("|", requestId)
+            val placeName = requestId.substringAfter("|", requestId)
+            helper.showLandmarkNotification(placeId, placeName)
+        }
     }
 }

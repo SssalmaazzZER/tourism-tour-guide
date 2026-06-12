@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginTop="@dimen/spacing_lg"
+    android:paddingHorizontal="@dimen/spacing_md">
+
+    <!-- Section Header -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="@dimen/spacing_md">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Explore Morocco"
+            style="@style/TextAppearance.Maghrib.Headline3" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/action_view_all"
+            android:textColor="@color/terracotta"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+    <!-- Categories Grid - 2x4 -->
+    <androidx.gridlayout.widget.GridLayout
+        android:id="@+id/categories_grid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:columnCount="4"
+        app:rowCount="2"
+        app:useDefaultMargins="true">
+
+        <!-- Category 1: Medinas -->
+        <include
+            layout="@layout/item_category"
+            android:id="@+id/cat_medinas"
+            app:layout_column="0"
+            app:layout_row="0"
+            app:layout_columnWeight="1" />
+
+        <!-- Category 2: Cuisine -->
+        <include
+            layout="@layout/item_category"
+            android:id="@+id/cat_cuisine"
+            app:layout_column="1"
+            app:layout_row="0"
+            app:layout_columnWeight="1" />
+
+        <!-- Category 3: Adventure -->
+        <include
+            layout="@layout/item_category"
+            android:id="@+id/cat_adventure"
+            app:layout_column="2"
+            app:layout_row="0"
+            app:layout_columnWeight="1" />
+
+        <!-- Category 4: Landmarks -->
+        <include
+            layout="@layout/item_category"
+            android:id="@+id/cat_landmarks"
+            app:layout_column="3"
+            app:layout_row="0"
+            app:layout_columnWeight="1" />
+
+        <!-- Category 5: Football -->
+        <include
+            layout="@layout/item_category"
+            android:id="@+id/cat_football"
+            app:layout_column="0"
+            app:layout_row="1"
+            app:layout_columnWeight="1" />
+
+        <!-- Category 6: Photo Spots -->
+        <include
+            layout="@layout/item_category"
+            android:id="@+id/cat_photo"
+            app:layout_column="1"
+            app:layout_row="1"
+            app:layout_columnWeight="1" />
+
+        <!-- Category 7: Culture -->
+        <include
+            layout="@layout/item_category"
+            android:id="@+id/cat_culture"
+            app:layout_column="2"
+            app:layout_row="1"
+            app:layout_columnWeight="1" />
+
+        <!-- Category 8: Tours -->
+        <include
+            layout="@layout/item_category"
+            android:id="@+id/cat_tours"
+            app:layout_column="3"
+            app:layout_row="1"
+            app:layout_columnWeight="1" />
+
+    </androidx.gridlayout.widget.GridLayout>
+
+</LinearLayout>

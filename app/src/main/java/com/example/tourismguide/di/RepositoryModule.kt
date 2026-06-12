@@ -9,6 +9,7 @@ import com.example.tourismguide.data.repository.ItineraryRepositoryImpl
 import com.example.tourismguide.data.repository.LiveLocationRepositoryImpl
 import com.example.tourismguide.data.repository.PlaceRepositoryImpl
 import com.example.tourismguide.data.repository.ReviewRepositoryImpl
+import com.example.tourismguide.data.repository.TourismRepositoryImpl
 import com.example.tourismguide.domain.repository.AuthRepository
 import com.example.tourismguide.domain.repository.BookingRepository
 import com.example.tourismguide.domain.repository.ChatRepository
@@ -18,6 +19,7 @@ import com.example.tourismguide.domain.repository.ItineraryRepository
 import com.example.tourismguide.domain.repository.LiveLocationRepository
 import com.example.tourismguide.domain.repository.PlaceRepository
 import com.example.tourismguide.domain.repository.ReviewRepository
+import com.example.tourismguide.domain.repository.TourismRepository
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -35,4 +37,5 @@ abstract class RepositoryModule {
     @Binds abstract fun bindChatRepository(impl: ChatRepositoryImpl): ChatRepository
     @Binds abstract fun bindLiveLocationRepository(impl: LiveLocationRepositoryImpl): LiveLocationRepository
     @Binds abstract fun bindBookingRepository(impl: BookingRepositoryImpl): BookingRepository
+    @Binds abstract fun bindTourismRepository(impl: TourismRepositoryImpl): TourismRepository
 }

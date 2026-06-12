@@ -12,6 +12,7 @@ object LocaleHelper {
         val locale = when (languageCode.lowercase(Locale.ROOT)) {
             "ar" -> Locale("ar")
             "fr" -> Locale.FRENCH
+            "es" -> Locale("es")
             else -> Locale.ENGLISH
         }
         Locale.setDefault(locale)

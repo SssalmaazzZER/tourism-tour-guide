@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Primary Moroccan Colors -->
+    <color name="terracotta">#C65D3B</color>
+    <color name="terracotta_dark">#A84E32</color>
+    <color name="terracotta_light">#D97B5C</color>
+    
+    <color name="saffron_gold">#D4A72C</color>
+    <color name="saffron_light">#E8C45A</color>
+    
+    <color name="majorelle_blue">#2E4A8F</color>
+    <color name="majorelle_light">#4A6BB5</color>
+    
+    <color name="emerald">#1D6B4F</color>
+    <color name="emerald_light">#2A8F6A</color>
+    
+    <!-- Background Colors -->
+    <color name="background_dark">#0A0A0F</color>
+    <color name="background_card">#12121A</color>
+    <color name="background_elevated">#1A1A24</color>
+    <color name="background_surface">#22222E</color>
+    
+    <!-- Text Colors -->
+    <color name="text_primary">#FAFAFA</color>
+    <color name="text_secondary">#A0A0B0</color>
+    <color name="text_muted">#6B6B7B</color>
+    
+    <!-- Accent Colors -->
+    <color name="accent_red">#E63946</color>
+    <color name="accent_green">#2ECC71</color>
+    <color name="accent_orange">#F39C12</color>
+    
+    <!-- Gradient Colors -->
+    <color name="gradient_start">#C65D3B</color>
+    <color name="gradient_end">#D4A72C</color>
+    
+    <!-- Overlay Colors -->
+    <color name="overlay_dark">#80000000</color>
+    <color name="overlay_light">#40000000</color>
+    
+    <!-- Status Bar -->
+    <color name="status_bar">#050508</color>
+</resources>

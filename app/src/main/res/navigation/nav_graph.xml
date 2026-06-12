@@ -9,6 +9,14 @@
     <activity android:id="@+id/loginActivity" android:name="com.example.tourismguide.presentation.auth.LoginActivity" android:label="@string/login" />
     <activity android:id="@+id/registerActivity" android:name="com.example.tourismguide.presentation.auth.RegisterActivity" android:label="@string/register" />
     <fragment android:id="@+id/homeFragment" android:name="com.example.tourismguide.presentation.home.HomeFragment" android:label="@string/home" />
+    <fragment android:id="@+id/discoverFragment" android:name="com.example.tourismguide.presentation.discover.DiscoverFragment" android:label="@string/discover" />
+    <fragment
+        android:id="@+id/categoryBrowseFragment"
+        android:name="com.example.tourismguide.presentation.browse.CategoryBrowseFragment"
+        android:label="@string/discover_morocco">
+        <argument android:name="contentType" app:argType="string" android:defaultValue="CITY" />
+        <argument android:name="titleRes" app:argType="integer" android:defaultValue="0" />
+    </fragment>
     <fragment android:id="@+id/mapFragment" android:name="com.example.tourismguide.presentation.map.MapFragment" android:label="@string/map" />
     <fragment android:id="@+id/guideListFragment" android:name="com.example.tourismguide.presentation.guide.GuideListFragment" android:label="@string/guides" />
     <activity
@@ -26,8 +34,6 @@
     <activity android:id="@+id/bookingActivity" android:name="com.example.tourismguide.presentation.booking.BookingActivity" android:label="@string/booking" />
     <fragment android:id="@+id/liveTrackingFragment" android:name="com.example.tourismguide.presentation.live.LiveTrackingFragment" android:label="@string/live_tracking" />
     <activity android:id="@+id/chatActivity" android:name="com.example.tourismguide.presentation.chat.ChatActivity" android:label="@string/chat" />
-    <fragment android:id="@+id/itineraryFragment" android:name="com.example.tourismguide.presentation.main.PlaceholderFragment" android:label="@string/itineraries" />
-    <fragment android:id="@+id/itineraryDetailFragment" android:name="com.example.tourismguide.presentation.main.PlaceholderFragment" android:label="@string/itinerary_detail" />
+    <fragment android:id="@+id/itineraryFragment" android:name="com.example.tourismguide.presentation.itinerary.ItineraryFragment" android:label="@string/itineraries" />
     <fragment android:id="@+id/profileFragment" android:name="com.example.tourismguide.presentation.profile.ProfileFragment" android:label="@string/profile" />
-    <fragment android:id="@+id/settingsFragment" android:name="com.example.tourismguide.presentation.main.PlaceholderFragment" android:label="@string/settings" />
 </navigation>

@@ -60,6 +60,7 @@ class SettingsActivity : LocalizedActivity() {
                 when (language) {
                     "fr" -> binding.languageGroup.check(R.id.buttonFrench)
                     "ar" -> binding.languageGroup.check(R.id.buttonArabic)
+                    "es" -> binding.languageGroup.check(R.id.buttonSpanish)
                     else -> binding.languageGroup.check(R.id.buttonEnglish)
                 }
                 
@@ -85,6 +86,7 @@ class SettingsActivity : LocalizedActivity() {
                 val language = when (checkedId) {
                     R.id.buttonFrench -> "fr"
                     R.id.buttonArabic -> "ar"
+                    R.id.buttonSpanish -> "es"
                     else -> "en"
                 }
                 lifecycleScope.launch {

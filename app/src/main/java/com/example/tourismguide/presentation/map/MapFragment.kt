@@ -22,10 +22,11 @@ import androidx.lifecycle.repeatOnLifecycle
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import com.example.tourismguide.R
 import com.example.tourismguide.databinding.FragmentMapBinding
-import com.example.tourismguide.presentation.place.PlaceDetailActivity
+import com.example.tourismguide.domain.model.TourismContent
+import com.example.tourismguide.presentation.guide.GuideDetailActivity
+import com.example.tourismguide.presentation.tourism.TourismDetailActivity
 import com.example.tourismguide.service.GeofenceBroadcastReceiver
 import com.example.tourismguide.service.LocationService
-import com.example.tourismguide.util.MapUtils
 import com.example.tourismguide.util.PermissionHelper
 import com.google.android.gms.location.Geofence
 import com.google.android.gms.location.GeofencingClient
@@ -46,11 +47,11 @@ class MapFragment : Fragment(), OnMapReadyCallback {
     private var _binding: FragmentMapBinding? = null
     private val binding get() = _binding!!
     private var googleMap: GoogleMap? = null
-    private lateinit var placeClusterManager: ClusterManager<PlaceClusterItem>
+    private lateinit var tourismClusterManager: ClusterManager<TourismMapClusterItem>
     private lateinit var guideClusterManager: ClusterManager<GuideClusterItem>
     private lateinit var geofencingClient: GeofencingClient
     private var firstFixCentered = false
-    private var selectedPlaceItem: PlaceClusterItem? = null
+    private var selectedTourismItem: TourismMapClusterItem? = null
 
     private val locationPermissionLauncher = registerForActivityResult(ActivityResultContracts.RequestPermission()) { granted ->
         if (granted) enableLocationFeatures() else Toast.makeText(requireContext(), R.string.location_permission_denied, Toast.LENGTH_LONG).show()
@@ -60,8 +61,7 @@ class MapFragment : Fragment(), OnMapReadyCallback {
         override fun onReceive(context: Context, intent: Intent) {
             val lat = intent.getDoubleExtra(LocationService.EXTRA_LATITUDE, 0.0)
             val lng = intent.getDoubleExtra(LocationService.EXTRA_LONGITUDE, 0.0)
-            val location = UserLocation(lat, lng)
-            viewModel.updateUserLocation(location)
+            viewModel.updateUserLocation(UserLocation(lat, lng))
             if (!firstFixCentered) {
                 firstFixCentered = true
                 googleMap?.animateCamera(CameraUpdateFactory.newLatLngZoom(LatLng(lat, lng), 13f))
@@ -96,34 +96,35 @@ class MapFragment : Fragment(), OnMapReadyCallback {
 
     override fun onMapReady(map: GoogleMap) {
         googleMap = map
-        placeClusterManager = ClusterManager(requireContext(), map)
+        tourismClusterManager = ClusterManager(requireContext(), map)
         guideClusterManager = ClusterManager(requireContext(), map)
+        tourismClusterManager.renderer = CategoryClusterRenderer(requireContext(), map, tourismClusterManager)
         guideClusterManager.renderer = GuideMarkerRenderer(requireContext(), map, guideClusterManager)
+
         map.setOnCameraIdleListener {
-            placeClusterManager.onCameraIdle()
+            tourismClusterManager.onCameraIdle()
             guideClusterManager.onCameraIdle()
         }
         map.setOnMarkerClickListener { marker ->
-            placeClusterManager.onMarkerClick(marker) || guideClusterManager.onMarkerClick(marker)
+            tourismClusterManager.onMarkerClick(marker) || guideClusterManager.onMarkerClick(marker)
         }
         map.setOnInfoWindowClickListener {
-            selectedPlaceItem?.let { item ->
-                startActivity(Intent(requireContext(), PlaceDetailActivity::class.java).putExtra("placeId", item.place.id))
+            selectedTourismItem?.let { item ->
+                startActivity(
+                    Intent(requireContext(), TourismDetailActivity::class.java)
+                        .putExtra(TourismDetailActivity.EXTRA_CONTENT_ID, item.content.id)
+                )
             }
         }
-        placeClusterManager.renderer = object : com.google.maps.android.clustering.view.DefaultClusterRenderer<PlaceClusterItem>(requireContext(), map, placeClusterManager) {
-            override fun onBeforeClusterItemRendered(item: PlaceClusterItem, markerOptions: com.google.android.gms.maps.model.MarkerOptions) {
-                markerOptions.icon(MapUtils.vectorToBitmapDescriptor(requireContext(), R.drawable.ic_place_marker))
-            }
-        }
-        placeClusterManager.setOnClusterItemClickListener {
-            selectedPlaceItem = it
+        tourismClusterManager.setOnClusterItemClickListener {
+            selectedTourismItem = it
             false
         }
         guideClusterManager.setOnClusterItemClickListener {
-            Toast.makeText(requireContext(), R.string.phase_3_coming, Toast.LENGTH_SHORT).show()
+            startActivity(Intent(requireContext(), GuideDetailActivity::class.java).putExtra("guideId", it.guide.id))
             true
         }
+
         if (PermissionHelper.checkPermission(requireContext(), Manifest.permission.ACCESS_FINE_LOCATION)) {
             enableLocationFeatures()
         } else {
@@ -136,10 +137,13 @@ class MapFragment : Fragment(), OnMapReadyCallback {
         viewLifecycleOwner.lifecycleScope.launch {
             viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
                 launch {
-                    viewModel.placesState.collect { if (binding.buttonPlaces.isChecked) renderPlaces(it) }
+                    viewModel.tourismMapState.collect { if (binding.buttonPlaces.isChecked) renderTourismContent(it) }
                 }
                 launch {
                     viewModel.guidesState.collect { if (binding.buttonGuides.isChecked) renderGuides(it) }
+                }
+                launch {
+                    viewModel.unescoSites.collect { addUnescoGeofences(it) }
                 }
             }
         }
@@ -149,38 +153,33 @@ class MapFragment : Fragment(), OnMapReadyCallback {
     private fun enableLocationFeatures() {
         googleMap?.isMyLocationEnabled = true
         ContextCompat.startForegroundService(requireContext(), Intent(requireContext(), LocationService::class.java))
-        val places = (viewModel.placesState.value as? LayerState.Success)?.data.orEmpty()
-        addGeofences(places.take(10))
     }
 
     private fun renderActiveLayer(checkedId: Int) {
-        if (checkedId == R.id.buttonGuides) renderGuides(viewModel.guidesState.value) else renderPlaces(viewModel.placesState.value)
+        if (checkedId == R.id.buttonGuides) renderGuides(viewModel.guidesState.value) else renderTourismContent(viewModel.tourismMapState.value)
     }
 
-    private fun renderPlaces(state: PlacesState) {
-        placeClusterManager.clearItems()
+    private fun renderTourismContent(items: List<TourismContent>) {
+        tourismClusterManager.clearItems()
         guideClusterManager.clearItems()
-        if (state is LayerState.Success) {
-            placeClusterManager.addItems(state.data.map { PlaceClusterItem(it, getString(R.string.open)) })
-            addGeofences(state.data.take(10))
-        }
-        placeClusterManager.cluster()
+        tourismClusterManager.addItems(items.map { TourismMapClusterItem(it) })
+        tourismClusterManager.cluster()
     }
 
     private fun renderGuides(state: GuidesState) {
-        placeClusterManager.clearItems()
+        tourismClusterManager.clearItems()
         guideClusterManager.clearItems()
         if (state is LayerState.Success) guideClusterManager.addItems(state.data.map { GuideClusterItem(it) })
         guideClusterManager.cluster()
     }
 
     @SuppressLint("MissingPermission")
-    private fun addGeofences(places: List<com.example.tourismguide.domain.model.Place>) {
-        if (!PermissionHelper.checkPermission(requireContext(), Manifest.permission.ACCESS_FINE_LOCATION) || places.isEmpty()) return
-        val geofences = places.map {
+    private fun addUnescoGeofences(sites: List<TourismContent>) {
+        if (!PermissionHelper.checkPermission(requireContext(), Manifest.permission.ACCESS_FINE_LOCATION) || sites.isEmpty()) return
+        val geofences = sites.map { site ->
             Geofence.Builder()
-                .setRequestId("${it.id}|${it.name}")
-                .setCircularRegion(it.latitude, it.longitude, 100f)
+                .setRequestId("unesco|${site.id}|${site.title}")
+                .setCircularRegion(site.latitude, site.longitude, 500f)
                 .setExpirationDuration(Geofence.NEVER_EXPIRE)
                 .setTransitionTypes(Geofence.GEOFENCE_TRANSITION_ENTER)
                 .build()

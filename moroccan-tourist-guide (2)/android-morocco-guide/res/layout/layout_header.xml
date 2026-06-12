@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/header_height"
+    android:background="@color/background_dark"
+    android:paddingHorizontal="@dimen/spacing_md">
+
+    <!-- Menu Button -->
+    <ImageButton
+        android:id="@+id/btn_menu"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:background="@drawable/bg_button_icon"
+        android:src="@drawable/ic_menu"
+        android:contentDescription="Menu"
+        app:tint="@color/text_primary"
+        android:padding="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <!-- Logo and Location -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <!-- App Logo Text -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name"
+            android:textSize="20sp"
+            android:textColor="@color/terracotta"
+            android:fontFamily="@font/playfair_display_bold" />
+
+        <!-- Current Location -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:src="@drawable/ic_location"
+                app:tint="@color/saffron_gold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="@string/city_marrakech"
+                android:textSize="12sp"
+                android:textColor="@color/text_muted" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- Notification Button -->
+    <ImageButton
+        android:id="@+id/btn_notifications"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:background="@drawable/bg_button_icon"
+        android:src="@drawable/ic_notification"
+        android:contentDescription="Notifications"
+        app:tint="@color/text_primary"
+        android:padding="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <!-- Notification Badge -->
+    <TextView
+        android:id="@+id/notification_badge"
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:background="@drawable/bg_badge"
+        android:text="3"
+        android:textSize="10sp"
+        android:textColor="@color/text_primary"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="@id/btn_notifications"
+        app:layout_constraintTop_toTopOf="@id/btn_notifications"
+        android:translationX="-2dp"
+        android:translationY="2dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

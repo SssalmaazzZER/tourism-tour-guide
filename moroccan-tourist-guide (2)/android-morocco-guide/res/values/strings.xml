@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Maghrib Guide</string>
+    <string name="app_tagline">Discover the Magic of Morocco</string>
+    
+    <!-- Welcome Section -->
+    <string name="welcome_title">Marhaba!</string>
+    <string name="welcome_subtitle">Welcome to The Kingdom of Morocco</string>
+    <string name="search_hint">Search destinations, experiences...</string>
+    
+    <!-- Navigation -->
+    <string name="nav_home">Home</string>
+    <string name="nav_explore">Explore</string>
+    <string name="nav_plan">Plan</string>
+    <string name="nav_saved">Saved</string>
+    <string name="nav_profile">Profile</string>
+    
+    <!-- Categories -->
+    <string name="cat_medinas">Medinas</string>
+    <string name="cat_cuisine">Cuisine</string>
+    <string name="cat_adventure">Adventure</string>
+    <string name="cat_landmarks">Landmarks</string>
+    <string name="cat_football">Football</string>
+    <string name="cat_photo_spots">Photo Spots</string>
+    <string name="cat_culture">Culture</string>
+    <string name="cat_tours">Tours</string>
+    
+    <!-- Featured Destinations -->
+    <string name="dest_jemaa">Jemaa el-Fna</string>
+    <string name="dest_jemaa_loc">Marrakech</string>
+    <string name="dest_hassan">Hassan II Mosque</string>
+    <string name="dest_hassan_loc">Casablanca</string>
+    <string name="dest_chefchaouen">Chefchaouen</string>
+    <string name="dest_chefchaouen_loc">Blue Pearl</string>
+    <string name="dest_sahara">Sahara Desert</string>
+    <string name="dest_sahara_loc">Merzouga</string>
+    
+    <!-- Football Section -->
+    <string name="football_title">Atlas Lions</string>
+    <string name="football_subtitle">World Cup 2022 - 4th Place</string>
+    <string name="football_achievement">Historic Achievement</string>
+    <string name="next_match">Next Match</string>
+    <string name="vs_egypt">vs Egypt</string>
+    
+    <!-- Players -->
+    <string name="player_hakimi">Achraf Hakimi</string>
+    <string name="player_hakimi_pos">Right Back</string>
+    <string name="player_ziyech">Hakim Ziyech</string>
+    <string name="player_ziyech_pos">Midfielder</string>
+    <string name="player_ennesyri">Youssef En-Nesyri</string>
+    <string name="player_ennesyri_pos">Striker</string>
+    
+    <!-- Cuisine -->
+    <string name="cuisine_title">Moroccan Cuisine</string>
+    <string name="dish_tagine">Tagine</string>
+    <string name="dish_couscous">Couscous</string>
+    <string name="dish_pastilla">Pastilla</string>
+    <string name="dish_harira">Harira</string>
+    
+    <!-- Weather -->
+    <string name="weather_title">Weather</string>
+    <string name="city_marrakech">Marrakech</string>
+    <string name="city_casablanca">Casablanca</string>
+    <string name="city_fes">Fes</string>
+    
+    <!-- Actions -->
+    <string name="action_book_now">Book Now</string>
+    <string name="action_explore">Explore</string>
+    <string name="action_view_all">View All</string>
+    <string name="action_get_tickets">Get Tickets</string>
+</resources>

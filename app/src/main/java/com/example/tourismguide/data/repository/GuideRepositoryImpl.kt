@@ -2,6 +2,7 @@ package com.example.tourismguide.data.repository
 
 import com.example.tourismguide.data.local.dao.GuideDao
 import com.example.tourismguide.data.local.entity.GuideEntity
+import com.example.tourismguide.data.local.entity.TourGuideEntity
 import com.example.tourismguide.data.remote.ApiService
 import com.example.tourismguide.data.remote.NetworkResult
 import com.example.tourismguide.domain.repository.GuideRepository
@@ -72,7 +73,12 @@ class GuideRepositoryImpl @Inject constructor(
     private suspend fun refreshGuides(language: String?, minRating: Double?, maxPrice: Double?) {
         runCatching {
             apiService.getGuides(language, minRating, maxPrice).map {
-                GuideEntity(it.id, it.name, it.avatarUrl, it.languages, it.rating, it.pricePerHour, it.phone, it.specialities, it.isVerified, it.isOnline)
+                TourGuideEntity(
+                    it.id, it.name, it.avatarUrl, it.languages, it.rating, it.pricePerHour, it.phone,
+                    email = "${it.name.lowercase().replace(" ", ".")}@guide.ma",
+                    it.specialities, availability = "Mon–Sat, 9h–18h", bio = it.specialities,
+                    it.isVerified, it.isOnline
+                )
             }
         }.onSuccess {
             guideDao.upsertAll(it.ifEmpty { fallbackGuides() })
@@ -82,9 +88,30 @@ class GuideRepositoryImpl @Inject constructor(
     }
 
     private fun fallbackGuides() = listOf(
-        GuideEntity("guide-amina", "Amina El Idrissi", "", "AR,FR,EN", 4.9, 180.0, "212600000001", "Culture,Medina,Food", true, true),
-        GuideEntity("guide-youssef", "Youssef Benali", "", "AR,FR", 4.7, 140.0, "212600000002", "Adventure,Atlas,Cities", true, false),
-        GuideEntity("guide-sara", "Sara Mansouri", "", "EN,FR", 4.8, 220.0, "212600000003", "Food,Photography,Beaches", true, true)
+        TourGuideEntity(
+            "guide-amina", "Amina El Idrissi",
+            "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400",
+            "AR,FR,EN", 4.9, 180.0, "212600000001", "amina.elidrissi@guide.ma",
+            "Culture,Medina,Food", "Mon–Sat, 8h–20h",
+            "Born in Fès medina, Amina reveals hidden fondouks and artisan workshops with passion.",
+            true, true
+        ),
+        TourGuideEntity(
+            "guide-youssef", "Youssef Benali",
+            "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400",
+            "AR,FR", 4.7, 140.0, "212600000002", "youssef.benali@guide.ma",
+            "Adventure,Atlas,Cities", "Tue–Sun, 7h–19h",
+            "Atlas mountain guide specializing in Toubkal treks and Berber village stays.",
+            true, false
+        ),
+        TourGuideEntity(
+            "guide-sara", "Sara Mansouri",
+            "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400",
+            "EN,FR,ES", 4.8, 220.0, "212600000003", "sara.mansouri@guide.ma",
+            "Food,Photography,Beaches", "Mon–Fri, 10h–18h",
+            "Culinary storyteller connecting Marrakech souks to Atlantic coast escapes.",
+            true, true
+        )
     )
 
     private companion object {

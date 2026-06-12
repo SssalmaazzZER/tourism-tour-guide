@@ -67,6 +67,15 @@
             android:name=".presentation.profile.SettingsActivity"
             android:exported="false" />
         <activity
+            android:name=".presentation.search.SearchActivity"
+            android:exported="false" />
+        <activity
+            android:name=".presentation.tourism.TourismDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".presentation.itinerary.CircuitBuilderActivity"
+            android:exported="false" />
+        <activity
             android:name=".presentation.place.PlaceDetailActivity"
             android:exported="false" />
         <activity

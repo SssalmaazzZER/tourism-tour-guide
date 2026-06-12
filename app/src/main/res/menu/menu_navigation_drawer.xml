@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item android:id="@+id/nav_cities" android:icon="@drawable/ic_home" android:title="@string/nav_cities" />
+        <item android:id="@+id/nav_monuments" android:icon="@drawable/ic_star_motif" android:title="@string/nav_monuments" />
+        <item android:id="@+id/nav_culture" android:icon="@drawable/ic_people" android:title="@string/nav_culture" />
+        <item android:id="@+id/nav_architecture" android:icon="@drawable/ic_route" android:title="@string/nav_architecture" />
+        <item android:id="@+id/nav_music" android:icon="@drawable/ic_mic" android:title="@string/nav_music" />
+        <item android:id="@+id/nav_gastronomy" android:icon="@drawable/ic_add" android:title="@string/nav_gastronomy" />
+        <item android:id="@+id/nav_festivals" android:icon="@drawable/ic_star_motif" android:title="@string/nav_festivals" />
+        <item android:id="@+id/nav_artisanat" android:icon="@drawable/ic_placeholder" android:title="@string/nav_artisanat" />
+        <item android:id="@+id/nav_nature" android:icon="@drawable/ic_map" android:title="@string/nav_nature" />
+        <item android:id="@+id/nav_activities" android:icon="@drawable/ic_route" android:title="@string/nav_activities" />
+        <item android:id="@+id/nav_museums" android:icon="@drawable/ic_home" android:title="@string/nav_museums" />
+        <item android:id="@+id/nav_unesco" android:icon="@drawable/ic_star_motif" android:title="@string/nav_unesco" />
+        <item android:id="@+id/nav_events" android:icon="@drawable/ic_mic" android:title="@string/nav_events" />
+        <item android:id="@+id/nav_circuits" android:icon="@drawable/ic_route" android:title="@string/nav_circuits" />
+    </group>
+    <item android:title="@string/account">
+        <menu>
+            <item android:id="@+id/nav_guides" android:icon="@drawable/ic_people" android:title="@string/find_a_guide" />
+            <item android:id="@+id/nav_search" android:icon="@android:drawable/ic_menu_search" android:title="@string/search" />
+            <item android:id="@+id/nav_favorites" android:icon="@drawable/ic_star_motif" android:title="@string/favorites" />
+            <item android:id="@+id/nav_settings" android:icon="@drawable/ic_person" android:title="@string/settings" />
+        </menu>
+    </item>
+</menu>

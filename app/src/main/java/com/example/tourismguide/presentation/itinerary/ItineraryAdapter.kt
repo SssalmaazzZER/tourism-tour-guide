@@ -9,7 +9,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.tourismguide.databinding.ItemItineraryTicketBinding
 
 class ItineraryAdapter(
-    private val onClick: (ItineraryListItem) -> Unit
+    private val onClick: (ItineraryListItem) -> Unit,
+    private val onCustomize: (ItineraryListItem) -> Unit
 ) : ListAdapter<ItineraryListItem, ItineraryAdapter.ItineraryViewHolder>(Diff) {
 
     private var lastPosition = -1
@@ -37,9 +38,9 @@ class ItineraryAdapter(
             binding.textDay.text = "Jour ${bindingAdapterPosition + 1}"
             // Description could be mapped from itinerary metadata or a sample
             binding.textDescription.text = "Exploration de la culture locale et des monuments historiques."
-            binding.textGuide.text = "Guide: Hassan M."
 
             binding.root.setOnClickListener { onClick(item) }
+            binding.buttonCustomize.setOnClickListener { onCustomize(item) }
         }
     }
 

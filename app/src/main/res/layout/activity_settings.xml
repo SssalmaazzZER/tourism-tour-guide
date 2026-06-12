@@ -81,6 +81,14 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="@string/language_ar" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/buttonSpanish"
+                        style="@style/Widget.Material3.Button.OutlinedButton"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/language_es" />
                 </com.google.android.material.button.MaterialButtonToggleGroup>
 
                 <com.google.android.material.materialswitch.MaterialSwitch

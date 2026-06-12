@@ -14,8 +14,14 @@ import androidx.work.ExistingPeriodicWorkPolicy
 import androidx.work.NetworkType
 import androidx.work.PeriodicWorkRequestBuilder
 import androidx.work.WorkManager
+import com.example.tourismguide.domain.repository.TourismRepository
 import com.example.tourismguide.service.SyncWorker
+import dagger.hilt.android.EntryPointAccessors
 import java.util.concurrent.TimeUnit
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.SupervisorJob
+import kotlinx.coroutines.launch
 import timber.log.Timber
 
 @HiltAndroidApp
@@ -54,5 +60,19 @@ class TourismApp : Application() {
             ExistingPeriodicWorkPolicy.KEEP,
             request
         )
+        CoroutineScope(SupervisorJob() + Dispatchers.IO).launch {
+            runCatching {
+                EntryPointAccessors.fromApplication(
+                    this@TourismApp,
+                    TourismSeedEntryPoint::class.java
+                ).tourismRepository().seedDataIfNeeded()
+            }.onFailure { Timber.w(it, "Failed to seed Morocco content") }
+        }
     }
+}
+
+@dagger.hilt.EntryPoint
+@dagger.hilt.InstallIn(dagger.hilt.components.SingletonComponent::class)
+interface TourismSeedEntryPoint {
+    fun tourismRepository(): TourismRepository
 }

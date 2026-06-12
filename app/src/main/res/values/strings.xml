@@ -143,4 +143,55 @@
     <string name="itinerary_meta" formatted="false">%d places</string>
     <string name="itinerary_deleted">Itinerary deleted</string>
     <string name="undo">Undo</string>
+
+    <!-- Discover Morocco -->
+    <string name="discover">Discover</string>
+    <string name="discover_morocco">Discover Morocco</string>
+    <string name="discover_subtitle">Culture, history, gastronomy &amp; adventures</string>
+    <string name="browse_categories">Browse Categories</string>
+    <string name="featured_highlights">Featured Highlights</string>
+    <string name="search">Search</string>
+    <string name="recent_searches">Recent Searches</string>
+    <string name="no_results">No results found</string>
+    <string name="favorites">Favorites</string>
+    <string name="add_to_favorites">Add to Favorites</string>
+    <string name="remove_from_favorites">Remove from Favorites</string>
+    <string name="view_on_map">View on Map</string>
+    <string name="rating_format" formatted="false">★ %.1f</string>
+    <string name="language_es">ES</string>
+    <string name="nav_cities">Cities</string>
+    <string name="nav_monuments">Monuments</string>
+    <string name="nav_culture">Culture</string>
+    <string name="nav_architecture">Architecture</string>
+    <string name="nav_music">Music</string>
+    <string name="nav_gastronomy">Gastronomy</string>
+    <string name="nav_festivals">Festivals</string>
+    <string name="nav_artisanat">Artisanat</string>
+    <string name="nav_nature">Nature</string>
+    <string name="nav_activities">Activities</string>
+    <string name="nav_museums">Museums</string>
+    <string name="nav_unesco">UNESCO Heritage</string>
+    <string name="nav_events">Events</string>
+    <string name="nav_circuits">Travel Circuits</string>
+    <string name="home_greeting">Marhaba, traveler</string>
+    <string name="home_subtitle">Where will Morocco take you today?</string>
+    <string name="find_a_guide">Find a Guide</string>
+    <string name="find_a_guide_subtitle">Verified local experts for your journey</string>
+    <string name="key_figures">Key Figures</string>
+    <string name="customize_circuit">Customize This Circuit</string>
+    <string name="edit_days">Edit Days</string>
+    <string name="circuit_builder">Circuit Builder</string>
+    <string name="add_day">Add day</string>
+    <string name="day_title_hint">Day title</string>
+    <string name="new_day">New day</string>
+    <string name="drag_handle">Drag to reorder</string>
+    <string name="languages_format" formatted="false">Languages: %s</string>
+    <string name="specialities_format" formatted="false">Specialties: %s</string>
+    <string name="availability_format" formatted="false">Availability: %s</string>
+    <string name="channel_festivals">Festival Reminders</string>
+    <string name="channel_unesco">UNESCO Sites</string>
+    <string name="festival_reminder_title" formatted="false">%s starts tomorrow!</string>
+    <string name="festival_reminder_body">Your saved festival is coming up. Tap to view details.</string>
+    <string name="unesco_nearby_title" formatted="false">Near UNESCO site: %s</string>
+    <string name="unesco_nearby_body">You are entering an area with world heritage treasures.</string>
 </resources>

@@ -1,39 +1,58 @@
 <resources>
-    <!-- Moroccan Explorer palette -->
-    <color name="terracotta_red">#C0392B</color>
-    <color name="saffron_gold">#E8A020</color>
-    <color name="deep_zellige_teal">#1A5C5A</color>
-    <color name="moroccan_clay">#D4845A</color>
-    <color name="ivory_plaster">#FAF0E0</color>
-    <color name="night_marrakech">#1C1208</color>
-    <color name="argan_amber">#C97D2E</color>
-    <color name="mint_sousse">#3AAFA9</color>
-    <color name="cobalt_blue_zellige">#1B4F72</color>
+    <!-- Material 3 – Morocco warm light palette -->
+    <color name="md_primary">#C45C26</color>
+    <color name="md_on_primary">#FFFFFF</color>
+    <color name="md_primary_container">#FFDBC8</color>
+    <color name="md_on_primary_container">#3A0F00</color>
+    <color name="md_secondary">#775847</color>
+    <color name="md_on_secondary">#FFFFFF</color>
+    <color name="md_secondary_container">#FFDBC8</color>
+    <color name="md_on_secondary_container">#2C1608</color>
+    <color name="md_tertiary">#6B5E2E</color>
+    <color name="md_on_tertiary">#FFFFFF</color>
+    <color name="md_background">#FFFBF7</color>
+    <color name="md_on_background">#1C1917</color>
+    <color name="md_surface">#FFFFFF</color>
+    <color name="md_on_surface">#1C1917</color>
+    <color name="md_surface_variant">#F5EDE4</color>
+    <color name="md_on_surface_variant">#57534E</color>
+    <color name="md_outline">#A8A29E</color>
+    <color name="md_error">#BA1A1A</color>
+
+    <!-- Semantic aliases used across layouts -->
+    <color name="terracotta_red">@color/md_primary</color>
+    <color name="saffron_gold">#D4A574</color>
+    <color name="deep_zellige_teal">@color/md_on_surface</color>
+    <color name="moroccan_clay">#E8C4A8</color>
+    <color name="ivory_plaster">@color/md_background</color>
+    <color name="night_marrakech">@color/md_on_background</color>
+    <color name="argan_amber">#B87333</color>
+    <color name="mint_sousse">#2D6A4F</color>
+    <color name="cobalt_blue_zellige">#1D4E89</color>
     <color name="rose_jardin">#C9526B</color>
-    <color name="olive_medina">#7D8B3A</color>
+    <color name="olive_medina">#6B7C3A</color>
 
-    <color name="deep_navy">#1A5C5A</color>
-    <color name="rich_copper">#C0392B</color>
-    <color name="muted_gold">#E8A020</color>
-    <color name="burned_orange">#C97D2E</color>
-    <color name="turquoise">#3AAFA9</color>
+    <color name="deep_navy">@color/md_background</color>
+    <color name="rich_copper">@color/md_primary</color>
+    <color name="muted_gold">@color/saffron_gold</color>
+    <color name="burned_orange">#A84820</color>
+    <color name="turquoise">@color/mint_sousse</color>
+    <color name="surface_navy">@color/md_surface_variant</color>
+    <color name="text_white">@color/md_on_primary</color>
+    <color name="text_grey">@color/md_on_surface_variant</color>
+    <color name="text_primary">@color/md_on_surface</color>
+    <color name="text_secondary">@color/md_on_surface_variant</color>
 
-    <color name="surface_navy">#123736</color>
-    <color name="text_white">#FAF0E0</color>
-    <color name="text_grey">#C8BFAF</color>
+    <color name="copper_gradient_start">#C45C26</color>
+    <color name="copper_gradient_end">#D4A574</color>
+    <color name="translucent_copper">#33C45C26</color>
+    <color name="amber_glow">#40D4A574</color>
 
-    <color name="copper_gradient_start">#1C1208</color>
-    <color name="copper_gradient_end">#C0392B</color>
-
-    <color name="translucent_copper">#33C0392B</color>
-    <color name="amber_glow">#40E8A020</color>
-
-    <!-- Legacy aliases kept for existing files -->
-    <color name="moroccan_terracotta">#C0392B</color>
-    <color name="moroccan_turquoise">#1A5C5A</color>
-    <color name="moroccan_sand">#FAF0E0</color>
-    <color name="moroccan_mint">#3AAFA9</color>
-    <color name="moroccan_white">#FAF0E0</color>
-    <color name="moroccan_deep_blue">#1B4F72</color>
-    <color name="shimmer_placeholder">#E6D8C9</color>
+    <color name="moroccan_terracotta">@color/md_primary</color>
+    <color name="moroccan_turquoise">@color/mint_sousse</color>
+    <color name="moroccan_sand">@color/md_background</color>
+    <color name="moroccan_mint">@color/mint_sousse</color>
+    <color name="moroccan_white">@color/md_surface</color>
+    <color name="moroccan_deep_blue">@color/cobalt_blue_zellige</color>
+    <color name="shimmer_placeholder">#E7E5E4</color>
 </resources>

@@ -10,6 +10,7 @@ import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import com.example.tourismguide.R
 import com.example.tourismguide.presentation.place.PlaceDetailActivity
+import com.example.tourismguide.presentation.tourism.TourismDetailActivity
 
 class NotificationHelper(private val context: Context) {
     fun createChannels() {
@@ -17,6 +18,22 @@ class NotificationHelper(private val context: Context) {
         val manager = context.getSystemService(NotificationManager::class.java)
         manager.createNotificationChannel(NotificationChannel(CHANNEL_LANDMARKS, context.getString(R.string.channel_landmarks), NotificationManager.IMPORTANCE_DEFAULT))
         manager.createNotificationChannel(NotificationChannel(CHANNEL_BOOKINGS, context.getString(R.string.channel_bookings), NotificationManager.IMPORTANCE_DEFAULT))
+        manager.createNotificationChannel(NotificationChannel(CHANNEL_FESTIVALS, context.getString(R.string.channel_festivals), NotificationManager.IMPORTANCE_DEFAULT))
+        manager.createNotificationChannel(NotificationChannel(CHANNEL_UNESCO, context.getString(R.string.channel_unesco), NotificationManager.IMPORTANCE_HIGH))
+    }
+
+    fun showFestivalReminder(festivalId: String, festivalName: String) {
+        createChannels()
+        val intent = Intent(context, TourismDetailActivity::class.java).putExtra(TourismDetailActivity.EXTRA_CONTENT_ID, festivalId)
+        val pendingIntent = PendingIntent.getActivity(context, festivalId.hashCode(), intent, PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE)
+        show(CHANNEL_FESTIVALS, festivalId.hashCode(), context.getString(R.string.festival_reminder_title, festivalName), context.getString(R.string.festival_reminder_body), pendingIntent)
+    }
+
+    fun showUnescoNotification(siteId: String, siteName: String) {
+        createChannels()
+        val intent = Intent(context, TourismDetailActivity::class.java).putExtra(TourismDetailActivity.EXTRA_CONTENT_ID, siteId)
+        val pendingIntent = PendingIntent.getActivity(context, siteId.hashCode(), intent, PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE)
+        show(CHANNEL_UNESCO, siteId.hashCode(), context.getString(R.string.unesco_nearby_title, siteName), context.getString(R.string.unesco_nearby_body), pendingIntent)
     }
 
     fun showLandmarkNotification(placeName: String) {
@@ -51,5 +68,7 @@ class NotificationHelper(private val context: Context) {
     companion object {
         const val CHANNEL_LANDMARKS = "nearby_landmarks"
         const val CHANNEL_BOOKINGS = "bookings_requests"
+        const val CHANNEL_FESTIVALS = "festival_reminders"
+        const val CHANNEL_UNESCO = "unesco_geofence"
     }
 }

@@ -3,7 +3,9 @@ package com.example.tourismguide.presentation.map
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.tourismguide.data.remote.NetworkResult
+import com.example.tourismguide.domain.model.TourismContent
 import com.example.tourismguide.domain.repository.GuideRepository
+import com.example.tourismguide.domain.repository.TourismRepository
 import com.example.tourismguide.domain.usecase.GetNearbyPlacesUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
@@ -17,7 +19,8 @@ import kotlinx.coroutines.flow.stateIn
 @HiltViewModel
 class MapViewModel @Inject constructor(
     getNearbyPlacesUseCase: GetNearbyPlacesUseCase,
-    guideRepository: GuideRepository
+    guideRepository: GuideRepository,
+    tourismRepository: TourismRepository
 ) : ViewModel() {
     val placesState: StateFlow<PlacesState> = getNearbyPlacesUseCase(DEFAULT_LAT, DEFAULT_LNG, DEFAULT_RADIUS_KM, null)
         .map {
@@ -38,6 +41,12 @@ class MapViewModel @Inject constructor(
             }
         }
         .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), LayerState.Loading)
+
+    val tourismMapState: StateFlow<List<TourismContent>> = tourismRepository.observeMapContent()
+        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), emptyList())
+
+    val unescoSites: StateFlow<List<TourismContent>> = tourismRepository.observeByType("UNESCO")
+        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), emptyList())
 
     private val _userLocation = MutableStateFlow<UserLocation?>(null)
     val userLocation: StateFlow<UserLocation?> = _userLocation.asStateFlow()

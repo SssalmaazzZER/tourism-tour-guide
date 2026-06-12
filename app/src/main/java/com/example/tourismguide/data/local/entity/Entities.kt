@@ -21,8 +21,9 @@ data class PlaceEntity(
     val lastAccessedAt: Long = 0L
 )
 
+/** Tour guide profile – offline-first with availability and contact details. */
 @Entity(tableName = "guides")
-data class GuideEntity(
+data class TourGuideEntity(
     @PrimaryKey val id: String,
     val name: String,
     val avatarUrl: String,
@@ -30,10 +31,15 @@ data class GuideEntity(
     val rating: Double,
     val pricePerHour: Double,
     val phone: String,
+    val email: String = "",
     val specialities: String,
+    val availability: String = "Mon–Sat, 9h–18h",
+    val bio: String = "",
     val isVerified: Boolean,
     val isOnline: Boolean
 )
+
+typealias GuideEntity = TourGuideEntity
 
 @Entity(tableName = "itineraries")
 data class ItineraryEntity(

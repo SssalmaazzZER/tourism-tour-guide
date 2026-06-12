@@ -41,6 +41,12 @@ class ItineraryFragment : Fragment() {
         adapter = ItineraryAdapter(
             onClick = {
                 startActivity(Intent(requireContext(), ItineraryDetailActivity::class.java).putExtra("itineraryId", it.itinerary.id))
+            },
+            onCustomize = {
+                startActivity(
+                    Intent(requireContext(), CircuitBuilderActivity::class.java)
+                        .putExtra(CircuitBuilderActivity.EXTRA_ITINERARY_ID, it.itinerary.id)
+                )
             }
         )
         binding.recyclerItineraries.layoutManager = LinearLayoutManager(requireContext())
